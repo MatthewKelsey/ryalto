@@ -1,8 +1,90 @@
-/* Reset default margin on body element */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 body {
-    margin: 0;
-  }
-  
+  margin: 0;
+}
+
+:root {
+  --bar-width: 40px;
+  --bar-height: 5px;
+  --hamburger-gap: 6px;
+  --foreground: #2799ef;
+  --background: white;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu.hamburger-menu:has(input:checked){
+    --foreground : white;
+    --background: #2799ef
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+  transform-origin: left center;
+}
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar{
+    transition: translate var(--animation-timing);
+    translate: 120%;
+    padding: .5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    background-color: var(--foreground);
+    color: white;
+    max-width: 10rem;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0
+}
   /* Style the navigation bar (nav) */
 /* Style the navigation bar (nav) */
 nav {
@@ -10,7 +92,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px; /* Add some padding for spacing */
-    height: 40px;
+    height: 50px;
     box-shadow: 2px 2px 2px #888888;
     margin-bottom: 10px;
   }
@@ -35,14 +117,42 @@ nav {
   /* Style the grid of blog boxes */
   .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
-    gap: 15px; /* Add some gap between grid items */
+    gap: 25px; /* Add some gap between grid items */
     padding: 60px;
   }
   
+  /* For phones and smaller screens */
+  @media (max-width: 767px) {
+    .blog-grid {
+      grid-template-columns: repeat(1, 1fr); /* Create a 1-column grid layout */
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid layout */
+    }
+  }
+  
+  /* For laptops */
+  @media (min-width: 992px) and (max-width: 1599px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
+    }
+  }
+  
+  /* For larger screens */
+  @media (min-width: 1600px) {
+    .blog-grid {
+      grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid layout */
+    }
+  }
+  
+  
   .blog-box {
     width: 100%; /* Make the boxes fill the entire grid column */
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px 2px #888888;
     transition: transform 0.2s ease-in-out;
   }
 
