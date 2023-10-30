@@ -1,0 +1,105 @@
+/* Reset default margin on body element */
+body {
+    margin: 0;
+  }
+  
+  /* Style the navigation bar (nav) */
+/* Style the navigation bar (nav) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Add some padding for spacing */
+    height: 40px;
+    box-shadow: 2px 2px 2px #888888;
+    margin-bottom: 10px;
+  }
+  
+  nav img {
+    max-height: 100%; /* Ensure the image fits inside the navbar vertically */
+    max-width: 100%; /* Ensure the image fits inside the navbar horizontally */
+  }
+  /* Style the welcome banner */
+  .welcome-banner {
+    background-color: #2799ef;
+    color: white;
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add some padding for spacing */
+  }
+  
+  /* Style the main content area */
+  main {
+   
+  }
+  
+  /* Style the grid of blog boxes */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
+    gap: 15px; /* Add some gap between grid items */
+  }
+  
+  .blog-box {
+    width: 100%; /* Make the boxes fill the entire grid column */
+    box-shadow: 5px 5px 5px #888888;
+    transition: transform 0.2s ease-in-out;
+  }
+
+ 
+  
+  .blog-box img {
+    border-radius: 50%; /* Make the image circular */
+    width: 60px; /* Adjust the size as needed */
+    height:60px; /* Adjust the size as needed */
+  }
+  
+  .blog-box:hover{
+    transform: scale(1.05); /* Enlarge the box by 5% on hover */
+  }
+  /* Style the footer and social media icons */
+
+  .author {
+    display: flex; /* Use flexbox to arrange content horizontally */
+    align-items: center; /* Center vertically within the box */
+  }
+  .author-details {
+    display: flex;
+    flex-direction: column; /* Stack the author details vertically */
+    text-align: left; /* Align details to the left */
+  }
+  
+  .author-details h3 {
+    margin: 0; /* Remove default margin for h3 */
+  }
+  
+  .author-details p {
+    margin: 0; /* Remove default margin for p */
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Add some padding for spacing */
+  }
+  
+  .icons {
+    display: flex;
+    gap: 10px; /* Add some gap between icons */
+  }
+  
+  .blue-circle {
+    background-color: #2799ef;
+    border-radius: 50%; /* Make the circle 50% for a full circle effect */
+    width: 40px; /* Adjust the size of the icons */
+    height: 40px; /* Adjust the size of the icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gallery{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
