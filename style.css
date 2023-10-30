@@ -37,6 +37,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
     gap: 15px; /* Add some gap between grid items */
+    padding: 60px;
   }
   
   .blog-box {
