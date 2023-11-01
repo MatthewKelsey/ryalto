@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <!-- <link rel="icon" href="%PUBLIC_URL%/swoop.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Online Marketplace for pre-owned items" />
 
 
     <link rel="stylesheet" href="./style.css">
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Ryalto - Dev Page</title>
+    <title>Ryalto Developer Page</title>
 </head>
 
 <body>
     <nav>
-        <img src='./images/ryalto-logo-lg.png'>
+
+        <a href="./index.html"><img src='./images/ryalto-logo-lg.png'></a>
+
+
         <label class="hamburger-menu">
             <input type="checkbox" />
         </label>
-        <aside class = 'sidebar'>
-            <div>blog</div>
-            <div>devs</div>
-            <div>careers</div>
+        <aside class='sidebar'>
+            <div class="hamburger-option">
+                <a href="./index.html">Blog</a>
+
+            </div>
+            <div class="hamburger-option">
+                <a href="./Pages/our-team.html">Our Team</a>
+            </div>
+            <div class="hamburger-option">
+                <a href="./Pages/test.html">Careers</a>
+
+            </div>
         </aside>
-        
+
 
     </nav>
 
@@ -35,14 +44,63 @@
 
         <div class='welcome-banner'>
             <h1>Welcome To Our Developers Page!</h1>
+            <p>We're really proud of our Tech Team here at Ryalto. This is a page for us to share what we're getting up
+                to in the background! Gary, please can you think of some better words to put here!</p>
         </div>
 
-            <h2>Recent Blog Posts</h2>
-        <div class = 'gallery'>
-            <img src = './images/icons8-right-arrow-50 (1).png'> 
-            <img src = './images/Screenshot from 2023-10-30 10-42-20.png'>
-            <img src = './images/icons8-right-arrow-50 (1).png'>
+        <h2>Recent Blog Posts</h2>
+        <div class="gallery">
 
+            <div class="arrow arrow-left">
+                <a href="#big-blog-box-left">
+                    <img src="./images/icons8-left-arrow-50.png" alt="Previous">
+                </a>
+            </div>
+            <div class="big-blog-box-container">
+
+                <a href="./Pages/post-1.html" class="big-blog-box" id="big-blog-box-left">
+
+
+                    <div class="big-blog-author">
+                        <div class="large-photo">
+                            <img src="./images/Matt.png" alt="Author">
+                        </div>
+
+                        <h2>Matt</h2>
+                        <h3>October, 2023</h3>
+                    </div>
+                    <div class="big-blog-content">
+                        <h2>Migrating to GitHub Actions for Rails CI</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                    </div>
+                </a>
+
+                <a href="./Pages/post-1.html" class="big-blog-box" id="big-blog-box-right">
+
+
+                    <div class="big-blog-author">
+                        <div class="large-photo">
+                            <img src="./images/Matt.png" alt="Author">
+                        </div>
+
+                        <h2>Matt</h2>
+                        <h3>October, 2023</h3>
+                    </div>
+                    <div class="big-blog-content">
+                        <h2>Migrating to GitHub Actions for Rails CI</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                    </div>
+                </a>
+
+                <!-- Add more big-blog-box divs as needed -->
+            </div>
+
+            <div class="arrow arrow-right">
+                <a href="#big-blog-box-right" class="next">
+                    <img src="./images/icons8-right-arrow-50.png" alt="Next">
+                </a>
+            </div>
+        </div>
 
 
         </div>
@@ -51,58 +109,151 @@
 
         <div class="blog-grid">
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <div class="'author">
-                <img src = './images/pro.jpeg'>
-                <div class="author-details">
-                <h3>Matt</h3>
-                <p> October 13 2022</p>
-            </div>
-            </div>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
 
-            </div>
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <img src = './images/pro.jpeg'>
-            </div>
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <img src = './images/pro.jpeg'>
-            </div>
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <img src = './images/pro.jpeg'>
-            </div>
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <img src = './images/pro.jpeg'>
-            </div>
 
-            <div class="blog-box">
-                <h2>Migrating to GitHun Actions for Rails CI</h2>
-                <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
-                <img src = './images/pro.jpeg'>
-            </div>
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
 
-          
+
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+            <a href="./Pages/post-1.html">
+                <div class="blog-box">
+                    <h2>Migrating to GitHub Actions for Rails CI</h2>
+                    <p>Ruby is shutting down so I'm migrating to GitHub Actions for rails CI</p>
+                    <div class="author">
+                        <div class="author-image">
+                            <img src='./images/Matt.png'>
+                        </div>
+                        <div class="author-details">
+                            <h3>Matt</h3>
+                            <p> October 13 2022</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+
+
         </div>
-
-
 
     </main>
 
     <footer>
 
+        <h4>Follow Us</h4>
         <div class='icons'>
             <div class="blue-circle">
                 <img src='./images/icons8-github-60 (1).png'>

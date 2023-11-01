@@ -1,12 +1,28 @@
+/* Global Styles */
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
+p {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+/* CSS Variables */
 :root {
   --bar-width: 40px;
   --bar-height: 5px;
@@ -18,6 +34,7 @@ body {
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
+/* Hamburger Menu */
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
   display: flex;
@@ -31,10 +48,11 @@ body {
   cursor: pointer;
 }
 
-.hamburger-menu.hamburger-menu:has(input:checked){
-    --foreground : white;
-    --background: #2799ef
+.hamburger-menu.hamburger-menu:has(input:checked) {
+  --foreground: white;
+  --background: #2799ef;
 }
+
 .hamburger-menu::before,
 .hamburger-menu::after,
 .hamburger-menu input {
@@ -48,6 +66,7 @@ body {
     background-color var(--animation-timing);
   transform-origin: left center;
 }
+
 .hamburger-menu input {
   appearance: none;
   padding: 0;
@@ -67,150 +86,326 @@ body {
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
 }
+
 .hamburger-menu input:checked {
   opacity: 0;
   width: 0;
 }
 
-.sidebar{
-    transition: translate var(--animation-timing);
-    translate: 120%;
-    padding: .5rem 1rem;
-    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
-    background-color: var(--foreground);
-    color: white;
-    max-width: 10rem;
+/* Sidebar */
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: 120%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground);
+  color: white;
+  max-width: 10rem;
 }
 
 .hamburger-menu:has(input:checked) + .sidebar {
-    translate: 0
+  translate: 0;
 }
-  /* Style the navigation bar (nav) */
-/* Style the navigation bar (nav) */
+
+/* Navigation Bar (nav) */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px; /* Add some padding for spacing */
-    height: 50px;
-    box-shadow: 2px 2px 2px #888888;
-    margin-bottom: 10px;
-  }
-  
-  nav img {
-    max-height: 100%; /* Ensure the image fits inside the navbar vertically */
-    max-width: 100%; /* Ensure the image fits inside the navbar horizontally */
-  }
-  /* Style the welcome banner */
-  .welcome-banner {
-    background-color: #2799ef;
-    color: white;
-    text-align: center; /* Center the text */
-    padding: 20px; /* Add some padding for spacing */
-  }
-  
-  /* Style the main content area */
-  main {
-   
-  }
-  
-  /* Style the grid of blog boxes */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  box-shadow: 2px 2px 2px #888888;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+nav a img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  background-color: #2799ef;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Main Content Area (main) */
+main {
+  /* Add specific styles for the main content area */
+}
+
+/* Grid of Blog Boxes */
+.blog-grid {
+  display: grid;
+  gap: 25px;
+  padding: 60px;
+}
+
+/* Media Queries for Grid Layout */
+@media (max-width: 767px) {
   .blog-grid {
-    display: grid;
-    gap: 25px; /* Add some gap between grid items */
-    padding: 60px;
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  /* For phones and smaller screens */
-  @media (max-width: 767px) {
-    .blog-grid {
-      grid-template-columns: repeat(1, 1fr); /* Create a 1-column grid layout */
-    }
-  }
-  
-  /* For tablets */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .blog-grid {
-      grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid layout */
-    }
-  }
-  
-  /* For laptops */
-  @media (min-width: 992px) and (max-width: 1599px) {
-    .blog-grid {
-      grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
-    }
-  }
-  
-  /* For larger screens */
-  @media (min-width: 1600px) {
-    .blog-grid {
-      grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid layout */
-    }
-  }
-  
-  
-  .blog-box {
-    width: 100%; /* Make the boxes fill the entire grid column */
-    box-shadow: 5px 5px 5px 2px #888888;
-    transition: transform 0.2s ease-in-out;
-  }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1529px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1530px) {
+  .blog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Blog Box Styles */
+.blog-box {
+  width: 100%;
+  box-shadow: 2px 2px 2px 2px #88888881;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.blog-box img {
+ object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-box:hover {
+  transform: scale(1.05);
+}
+
+/* Author Styles */
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.author-details h3 {
+  margin: 0;
+}
+
+.author-details p {
+  margin: 0;
+}
+
+.author-image{
+  background-color: #fbbc11;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  
+}
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Social Media Icons */
+.icons {
+  display: flex;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.icons img {
+  object-fit: cover;
+  width: 90%;
+  height: 90%;
+}
+
+.blue-circle {
+  background-color: #2799ef;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;margin: 5px;
+}
+
+/* Gallery Styles */
+.gallery {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 40vh;
+}
+
+.gallery-photo {
+  cursor: pointer;
+}
+
+.gallery img {
+  /* Additional styles for gallery images if needed */
+}
+
+/* Arrow Styles */
+.arrow {
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: scale(1.05);
+  background-color: #88888862;
+}
+
+/* Hamburger Option Styles */
+.hamburger-option {
+  cursor: pointer;
+}
+
+.hamburger-option:hover {
+  color: #2799ef;
+  background-color: white;
+}
+
+/* Heading Styles */
+h2 {
+  text-align: center;
+}
+
+/* Big Blog Box Styles */
+.big-blog-box {
+  display: flex;
+  height: 100%;
+  min-width: 100% !important;
+  padding: 40px;
+  scroll-snap-align: start;
+}
+
+/* Big Blog Author Styles */
+.big-blog-author {
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .gallery {
+    display: none;
+  }
+}
+
+.big-blog-author img {
+  height: 80%;
+}
+
+/* Large Photo Styles */
+.large-photo {
  
-  
-  .blog-box img {
-    border-radius: 50%; /* Make the image circular */
-    width: 60px; /* Adjust the size as needed */
-    height:60px; /* Adjust the size as needed */
-  }
-  
-  .blog-box:hover{
-    transform: scale(1.05); /* Enlarge the box by 5% on hover */
-  }
-  /* Style the footer and social media icons */
+  height: 200px;
+  width: 200px;
+  background-color: #fbbc11;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px 3px  #888888;
+}
 
-  .author {
-    display: flex; /* Use flexbox to arrange content horizontally */
-    align-items: center; /* Center vertically within the box */
-  }
-  .author-details {
-    display: flex;
-    flex-direction: column; /* Stack the author details vertically */
-    text-align: left; /* Align details to the left */
-  }
-  
-  .author-details h3 {
-    margin: 0; /* Remove default margin for h3 */
-  }
-  
-  .author-details p {
-    margin: 0; /* Remove default margin for p */
-  }
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Add some padding for spacing */
-  }
-  
-  .icons {
-    display: flex;
-    gap: 10px; /* Add some gap between icons */
-  }
-  
-  .blue-circle {
-    background-color: #2799ef;
-    border-radius: 50%; /* Make the circle 50% for a full circle effect */
-    width: 40px; /* Adjust the size of the icons */
-    height: 40px; /* Adjust the size of the icons */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .gallery{
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-  }
+.large-photo img {
+  height: 100%;
+  object-fit: cover;
+}
 
+/* Big Blog Content Styles */
+.big-blog-content {
+  height: 100%;
+}
+
+/* Footer Styles (again) */
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Additional Styles (if any) */
+.blog-box h2 {
+  text-align: left;
+}
+
+h3 {
+  margin-left: 50px;
+}
+
+/* Big Blog Box Container Styles */
+.big-blog-box-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  box-shadow: 2px 5px 5px 2px #888888;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.big-blog-box-container::-webkit-scrollbar {
+  display: none;
+}
+
+.big-blog-box-container a {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(calc(-100% / 3));
+  }
+  66.67% {
+    transform: translateX(calc(-100% / 3));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+}
+
+.big-blog-box-link {
+  display: block;
+  height: 100%;
+}
